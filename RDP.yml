@@ -1,0 +1,50 @@
+name: Windows - LiteManager - AloneBoredDeveloper
+
+on:
+  workflow_dispatch:
+
+jobs:
+  show-ip:
+    name: Show Public IP
+    runs-on: windows-latest
+    
+    steps:
+      - name: Get Public IP
+        run: |
+          $ip = Invoke-RestMethod -Uri 'http://ipinfo.io/ip'
+          Write-Output "Public IP: $ip"
+  build:
+    name: Building
+    runs-on: windows-latest
+    needs: show-ip
+    
+    steps:
+      - name: Downloading & Installing Essentials
+        run: |
+          Invoke-WebRequest -Uri "https://raw.githubusercontent.com/AloneBoredDeveloper/FreeRDP-Win10/refs/heads/main/Downloads.bat" -OutFile "Downloads.bat"
+          cmd /c Downloads.bat
+      - name: Litemanager And Your RDP Credentials 
+        run: cmd /c show.bat
+
+      - name: Changing Display Scale ...
+        run: |
+          Add-Type -AssemblyName System.Windows.Forms
+          $form = New-Object System.Windows.Forms.Form
+          $form.Size = New-Object System.Drawing.Size(1366, 768)
+          $form.Show()
+          $form.Close()
+      - name: Checking Last Requirments ...
+        run: |
+          Invoke-WebRequest -Uri "https://aloneboreddeveloper.github.io/site/wp-content/uploads/2025/02/0547b64597cb21f35386e205556af466-1.jpg" -OutFile "C:\\path\\to\\wallpaper.jpg"
+          reg add "HKCU\Control Panel\Desktop" /v Wallpaper /t REG_SZ /d C:\\path\\to\\0547b64597cb21f35386e205556af466-1.jpg /f
+          RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters
+      - name: Done !
+        run: |
+          Start-Process "C:\Program Files\Mozilla Firefox\firefox.exe" "https://github.com/aloneboreddeveloper"
+      - name: Keeping Alive RDP
+        run: |
+          echo "Starting keep-alive loop..."
+          while ($true) {
+            Start-Sleep -Seconds 60
+            echo "Still running..."
+          }
