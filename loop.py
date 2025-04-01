@@ -41,7 +41,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-        time.sleep(10)  # Adjust the sleep duration as needed
-
-if __name__ == "__main__":
-    main()
