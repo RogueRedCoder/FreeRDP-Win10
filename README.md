@@ -1,1 +1,7 @@
 # FreeRDP-Win10
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [Contributing](#contributing)
+- [License](#license)
