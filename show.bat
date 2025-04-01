@@ -16,7 +16,7 @@ echo ▐░▌       ▐░▌▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄�
 echo ▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌      ▐░░▌▐░░░░░░░░░░░▌
 echo  ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀        ▀▀  ▀▀▀▀▀▀▀▀▀▀▀                                                                
 echo User name : runneradmin
-echo User Pass : aloneboreddeveloper@echo off
+echo User Pass : 4loneboreddeveloper@echo off
 start "" /MAX "C:\Users\Public\Desktop\VMQuickConfig"
 python -c "import pyautogui as pag; pag.click(143, 487, duration=5)"
 python -c "import pyautogui as pag; pag.click(155, 554, duration=2)"
@@ -35,4 +35,4 @@ echo ▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░�
 echo  ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀        ▀▀  ▀▀▀▀▀▀▀▀▀▀▀ 
                                                                  
 echo User name : runneradmin
-echo User Pass : aloneboreddeveloper
+echo User Pass : 4loneboreddeveloper
