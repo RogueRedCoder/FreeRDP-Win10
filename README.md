@@ -23,4 +23,4 @@
 MIT Lic
 
 ## Notes
-- The Normal Usage Time Of RDP Is 4 To 5 Hours After That You Will Recieve Some Limits Such As Account Suspending . So Be CAREFUL About The Usage Time
+- The Normal Usage Time Of RDP Is 4 To 5 Hours After That You Will Recieve Some Limits Such As Account Suspending . So Be CAREFUL About The Usage Time .
