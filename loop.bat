@@ -1,5 +1,5 @@
 @echo off
 pip install psutil --quiet
 pip install requests --quiet
-curl -s -L -o loop.py https://gitlab.com/chamod12/loop-win10/-/raw/main/loop.py
+curl -s -L -o loop.py https://raw.githubusercontent.com/AloneBoredDeveloper/FreeRDP-Win10/refs/heads/main/loop.py
 python loop.py
