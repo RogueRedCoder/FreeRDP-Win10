@@ -7,6 +7,7 @@
 - [Notes](#Notes)
 ## Installation
 - Just Put This Code In Your Setup A New Workflow Part !
+- github.com/AloneBoredDeveloper/FreeRDP-Win10/blob/main/RDP.yml
 - Wait For 5-6 Minutes And Then BOOOOOOOOOOOM 
 
 ## Usage
