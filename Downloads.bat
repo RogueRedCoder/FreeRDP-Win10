@@ -8,14 +8,12 @@ pip install pyautogui --quiet
 choco install vcredist-all --no-progress
 curl -s -L -o C:\Users\Public\Desktop\Telegram.exe https://telegram.org/dl/desktop/win64
 curl -s -L -o C:\Users\Public\Desktop\Winrar.exe https://www.rarlab.com/rar/winrar-x64-621.exe
-curl -s -L -o C:\Users\Public\Desktop\Kmplayer.exe https://update.kmpmedia.net/player/download/kmp64x/en_US
 curl -s -L -o wall.bat https://raw.githubusercontent.com/AloneBoredDeveloper/FreeRDP-Win10/refs/heads/main/wall.bat
 powershell -Command "Invoke-WebRequest 'https://github.com/chieunhatnang/VM-QuickConfig/releases/download/1.6.1/VMQuickConfig.exe' -OutFile 'C:\Users\Public\Desktop\VMQuickConfig.exe'"
 C:\Users\Public\Desktop\Telegram.exe /VERYSILENT /NORESTART
 del C:\Users\Public\Desktop\Telegram.exe
 C:\Users\Public\Desktop\Winrar.exe /S
 del C:\Users\Public\Desktop\Winrar.exe
-C:\Users\Public\Desktop\Kmplayer.exe /VERYSILENT /NORESTART
 del /f "C:\Users\Public\Desktop\Epic Games Launcher.lnk"
 del /f "C:\Users\Public\Desktop\Unity Hub.lnk"
 net user runneradmin 4Loneboreddeveloper
