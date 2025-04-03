@@ -1,0 +1,56 @@
+name: Windows - LiteManager - AloneBoredDeveloper
+## ALL RIGHTS RESERVED | 2024-2025 AloneBoredDeveloper | 2024-2025 irodentv
+
+on:
+  workflow_dispatch:
+
+jobs:
+  show-ip:
+    name: Show Public IP
+    runs-on: windows-latest
+    
+    steps:
+      - name: Get Public IP
+        run: |
+          $ip = Invoke-RestMethod -Uri 'http://ipinfo.io/ip'
+          Write-Output "Public IP: $ip"
+  build:
+    name: Building
+    runs-on: windows-latest
+    needs: show-ip
+    
+    steps:
+      - name: Downloading & Installing Requirements
+        run: |
+          Invoke-WebRequest -Uri "https://raw.githubusercontent.com/AloneBoredDeveloper/FreeRDP-Win10/refs/heads/main/Downloads.bat" -OutFile "Downloads.bat"
+          cmd /c Downloads.bat
+      - name: Litemanager And Your RDP Credentials 
+        run: cmd /c show.bat
+
+      - name: Changing Display Scale ...
+        run: |
+          Add-Type -AssemblyName System.Windows.Forms
+          $form = New-Object System.Windows.Forms.Form
+          $form.Size = New-Object System.Drawing.Size(1366, 768)
+          $form.Show()
+          $form.Close()
+     
+      - name: Windows Environment Setting Up [1/2]
+        run: |
+          $taskbarRegistry = "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced"
+          New-ItemProperty -Path $taskbarRegistry -Name "TaskbarSmallIcons" -Value 0 -PropertyType DWord -Force
+          Stop-Process -Name explorer -Force
+          Start-Process explorer
+      - name: Windows Environment Setting Up [2/2] - Completed !
+        run: |
+         $themePath = "C:\\Windows\\Resources\\Themes\\aero.theme"
+         if (Test-Path $themePath) {
+         New-ItemProperty -Path "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes" -Name "CurrentTheme" -Value $themePath -PropertyType String -Force
+         RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters ,1 ,True
+          
+           }
+      - name: Last Steps ...
+        run: |
+          Start-Process "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "https://github.com/aloneboreddeveloper"
+      - name: Keeping Alive RDP
+        run: cmd /c loop.bat
